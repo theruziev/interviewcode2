@@ -1,0 +1,44 @@
+version: '3'
+
+dotenv: ['.env', '.env_test']
+
+tasks:
+  lint:
+    cmds:
+      - golangci-lint run --config .golangci.yaml ./...
+
+  test:
+    cmds:
+      - gotestsum --format pkgname -- -timeout=1m ./...
+
+  full-test:
+    cmds:
+      - gotestsum --format pkgname -- -race -shuffle=on -timeout=1m ./...
+
+  install-dev:
+    cmds:
+      - brew install mockery
+      - brew install golang-migrate
+      - go install gotest.tools/gotestsum@latest
+      - go install github.com/go-jet/jet/v2/cmd/jet@latest
+
+  go-generate:
+    cmds:
+      - go generate ./...
+
+  full-check:
+    cmds:
+      - task: lint
+      - task: full-test
+
+# migration staff
+  migrate-up:
+    cmds:
+      - migrate -source file://migrations -database $MIGRATION_DSN up
+  migrate-down:
+    cmds:
+      - migrate -source file://migrations -database $MIGRATION_DSN down
+
+  migrate-create:
+    cmds:
+      - migrate create -dir migrations -ext sql -seq {{.CLI_ARGS}}

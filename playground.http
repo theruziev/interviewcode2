@@ -1,0 +1,85 @@
+GET http://localhost:3001/
+
+
+###
+POST http://localhost:3001/user/register
+Content-Type: application/json
+
+{
+  "name": "bakhtiyor1",
+  "username": "username9@example.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:3001/user/activate/b46a07b8-7d31-498d-880e-39a3e9a01936
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:3001/user/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE1NDQ5MTEsInBpZCI6ImE2ZDc5NGY1LWQzYjYtNGM1Yi05NDYyLTgxZjI3Nzg3NjI5YiIsInVzcm4iOiJ1c2VybmFtZTJAZXhhbXBsZS5jb20iLCJzY3AiOlsidXNlciJdfQ.FWS7jaTSWHvoWM6dQ_Yn5uADrTScdWxVo-lbQlV4JcE
+
+
+###
+
+POST http://localhost:3001/user/auth
+Content-Type: application/json
+
+{
+  "username": "username2@example.com",
+  "password": "password"
+}
+
+###
+#    "212178",
+#    "503075",
+#    "282814",
+#    "420384",
+#    "863009",
+#    "484187",
+#    "747165",
+#    "773785",
+#    "728328",
+#    "853089",
+#    "511548",
+#    "902141",
+#    "794503",
+#    "213977",
+#    "546299",
+#    "788752",
+#    "693064",
+#    "858690",
+#    "529385",
+#    "256425"
+POST http://localhost:3001/user/auth-2fa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE0NTg3NTgsInBpZCI6ImE2ZDc5NGY1LWQzYjYtNGM1Yi05NDYyLTgxZjI3Nzg3NjI5YiIsInVzcm4iOiJ1c2VybmFtZTJAZXhhbXBsZS5jb20iLCJzY3AiOlsiMmZhLWNoZWNrIl19.br5dkwT9u1xNPNTNK_KE5R3W3gxYbttl9C5nhX4HTVo
+
+{
+  "code": "256425"
+}
+
+###
+
+POST http://localhost:3001/user/otp/step1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE1NDQ1OTIsInBpZCI6ImE2ZDc5NGY1LWQzYjYtNGM1Yi05NDYyLTgxZjI3Nzg3NjI5YiIsInVzcm4iOiJ1c2VybmFtZTJAZXhhbXBsZS5jb20iLCJzY3AiOlsidXNlciJdfQ.TXxkawKLB67K64lIGWipyvZqDA2WI397_UTE_9ji1Mg
+
+###
+
+POST http://localhost:3001/user/otp/step2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE1NDQ1OTIsInBpZCI6ImE2ZDc5NGY1LWQzYjYtNGM1Yi05NDYyLTgxZjI3Nzg3NjI5YiIsInVzcm4iOiJ1c2VybmFtZTJAZXhhbXBsZS5jb20iLCJzY3AiOlsidXNlciJdfQ.TXxkawKLB67K64lIGWipyvZqDA2WI397_UTE_9ji1Mg
+
+{
+  "code": "196654"
+}
+
+###
+
+POST http://localhost:3001/user/otp/disable
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc2NjkxNDIsIlB1YmxpY0lEIjoiZTU4MzgwNzctMTUxMC00NTY2LThkZTItMWI2ZDI4ODM4MjJkIiwiVXNlcm5hbWUiOiJ1c2VybmFtZTFAZXhhbXBsZS5jb20iLCJUd29GQVJlcXVpcmVkIjpmYWxzZX0.jX2auxPHlyE8BKzNFh9AveF6JRlLIdXHQBxpMqtmVLM
